@@ -18,6 +18,7 @@ from itertools import product
 
 entities格式： query\tentities1\tentities2...
 entites格式：entity1\nentity2...
+entity格式：entity之间用&&分隔开
 """
 
 def query_bind_entities(csv_file: Text):
@@ -48,6 +49,7 @@ def query_bind_entities(csv_file: Text):
             raise Exception(f"_bind_entities is out of range")
     
     def _split_entity(query_with_entity):
+        """entity&&entity 分割处理"""
         res = []
         res.append(query_with_entity[0])
         res.append(query_with_entity[1])
